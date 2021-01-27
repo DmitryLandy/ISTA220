@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Name: Dmitry Landy
+//Date: 22 January 2021
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

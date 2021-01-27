@@ -1,5 +1,5 @@
 ﻿//Name: Dmitry Landy
-//Date: 1/13/2021
+//Date: 27 January 2021
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,11 +14,10 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Windows.UI.Popups;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace Hello
+namespace DoStatement
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -30,19 +29,21 @@ namespace Hello
             this.InitializeComponent();
         }
 
-        
-
-        private void okClick(object sender, RoutedEventArgs e)
+        private void showStepsClick(object sender, RoutedEventArgs e)
         {
-            MessageDialog msg = new MessageDialog($"Hello there {UserName.Text}. " +
-                $"I hope you have a very nice day!");
+            int amount = int.Parse(number.Text); //init
+            steps.Text = "";
+            string current = "";
 
-            msg.ShowAsync();
-        }
-
-        private void UserName_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            do
+            {
+                int nextDigit = amount % 8;
+                amount /= 8; //update
+                int digitCode = '0' + nextDigit;
+                char digit = Convert.ToChar(digitCode);
+                current = digit + current;
+                steps.Text += current + "\n";
+            } while (amount != 0); //termination
         }
     }
 }

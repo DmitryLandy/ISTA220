@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Name: Dmitry Landy
+// Date: 1/13/2021
+using System;
 
 namespace TestHello
 {
