@@ -5,7 +5,7 @@
  */
 using System;
 
-namespace quiz05
+namespace ConsoleApp1
 {
     class Program
     {
