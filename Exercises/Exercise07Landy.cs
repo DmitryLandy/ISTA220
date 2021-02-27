@@ -28,6 +28,8 @@ namespace ex07_roulette
                 
                 bet = checkSelected(selection); //check's user's bet
 
+                printTable();
+
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 int spinResult = spinWheel(); //spin's wheel and get's spin result
                 bool result = calculateResult(selection, bet, spinResult);
