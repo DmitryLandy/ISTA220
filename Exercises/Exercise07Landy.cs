@@ -13,9 +13,11 @@ namespace ex07_roulette
     {
         static void Main(string[] args)
         {
-
+            
             //User Prompt:
             programPrompt();
+
+            printTable();
 
             int selection; //menu selection
             string bet; //user's bet
@@ -25,8 +27,6 @@ namespace ex07_roulette
                 selection = menu(); //display menu and gets user's selection
                 
                 bet = checkSelected(selection); //check's user's bet
-
-                printTable();
 
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 int spinResult = spinWheel(); //spin's wheel and get's spin result
@@ -42,9 +42,6 @@ namespace ex07_roulette
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("\nYou LOSE!");
                 }
-
-                
-                
             }
         }
 
@@ -111,8 +108,6 @@ namespace ex07_roulette
                     resColor = "black";
                     break;
                 }
-                    
-                
 
                 else
                     resColor = "red";
@@ -126,7 +121,7 @@ namespace ex07_roulette
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("C# Exercise 07: Roulette");
             Console.WriteLine("\nWelcome to Roulette!" +
-                "\nUse the menu to navigate to your desired bet: ");
+                "\nUse the menu to navigate to your desired bet: \n\n");
         }
         private static int spinWheel()
         {
